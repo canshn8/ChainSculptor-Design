@@ -15,7 +15,7 @@ export default function NavBar() {
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             {/* Logo */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-navLink">
-              Logo
+              ChainSculptor
             </span>
           </a>
 
