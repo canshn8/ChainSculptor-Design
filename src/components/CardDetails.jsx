@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaBookmark } from "react-icons/fa"; // İkonu buradan alıyoruz
 
 const CardDetails = ({ job, onClose }) => {
   const modalRef = useRef(null);
+  const [isBookmarked, setIsBookmarked] = useState(false); // Favoriye eklenip eklenmediğini tutacak durum
 
   // ESC tuşuna basınca modalı kapat
   useEffect(() => {
@@ -21,6 +23,11 @@ const CardDetails = ({ job, onClose }) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       onClose(); 
     }
+  };
+
+  // Favorilere ekle
+  const toggleBookmark = () => {
+    setIsBookmarked(!isBookmarked);
   };
 
   if (!job) return null; 
@@ -48,6 +55,14 @@ const CardDetails = ({ job, onClose }) => {
             ✕
           </button>
       
+          {/* Favorilere ekle Butonu */}
+          <button
+            onClick={toggleBookmark}
+            className="absolute top-6 left-6 text-4xl text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+          >
+            <FaBookmark color={isBookmarked ? "#ffcc00" : "#ccc"} />
+          </button>
+
           {/* Başlık ve Açıklama */}
           <h2 className="text-5xl font-bold text-darkBrown text-center">{job.title}</h2>
           <p className="text-xl text-darkBrown mt-6">{job.description}</p>
@@ -67,14 +82,6 @@ const CardDetails = ({ job, onClose }) => {
             <h3 className="text-3xl font-semibold text-darkBrown">Gereksinimler</h3>
             <ul className="list-disc ml-8 mt-4 text-darkBrown">
               <li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
-              <li>İyi derecede React.js bilgisi</li><li>Minimum 3 yıl deneyim</li>
               <li>İyi derecede React.js bilgisi</li>
               <li>Takım çalışmasına yatkınlık</li>
             </ul>
@@ -114,15 +121,13 @@ const CardDetails = ({ job, onClose }) => {
           <div className="mt-8 text-center">
             <button
                 onClick={() => window.location.href = `mailto:contact@${job.company}.com?subject=Başvuru: ${job.title}`}
-                className="bg-dark-brown text-white px-6 py-3 rounded-lg text-xl transition-all duration-300 transform hover:bg-[#4b3f35] hover:scale-105 hover:shadow-lg"
+                className="bg-dark-brown text-cardTxt px-6 py-3 rounded-lg text-xl transition-all duration-300 transform hover:text-cardBtnHvr hover:bg-[#4b3f35] hover:scale-105 hover:shadow-lg"
             >
                 Başvur
             </button>
           </div>
         </motion.div>
       </div>
-      
-      
       )}
     </AnimatePresence>
   );

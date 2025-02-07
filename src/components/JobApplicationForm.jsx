@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { FaRegAddressCard, FaRegPaperPlane, FaFileUpload } from 'react-icons/fa';
 
 const JobApplicationForm = () => {
@@ -19,6 +20,26 @@ const JobApplicationForm = () => {
   };
 
   return (
+    <div>
+      <Helmet>
+        <title>İş Başvurusu | Freelance Platform</title>
+        <meta name="description" content="Freelance projelere başvurun ve yeteneklerinizi sergileyin." />
+        <meta name="keywords" content="iş başvurusu, freelance, proje, başvuru, iş fırsatları" />
+
+        {/* Open Graph Tags */}
+        <meta property="og:title" content="İş Başvurusu | Freelance Platform" />
+        <meta property="og:description" content="Projelerde yer almak için iş başvurusu yapın ve freelance fırsatları değerlendirin." />
+        <meta property="og:image" content="https://yourwebsite.com/path-to-image.jpg" />
+        <meta property="og:url" content="https://yourwebsite.com/jobapplication" />
+
+        {/* Twitter Card Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="İş Başvurusu | Freelance Platform" />
+        <meta name="twitter:description" content="Projelerde yer almak için iş başvurusu yapın ve freelance fırsatları değerlendirin." />
+        <meta name="twitter:image" content="https://yourwebsite.com/path-to-image.jpg" />
+      </Helmet>
+
+
     <div className="bg-beige text-dark-brown p-8 rounded-lg shadow-md max-w-lg mx-auto">
       <h2 className="text-2xl font-bold text-center mb-6">Job Application</h2>
 
@@ -87,6 +108,7 @@ const JobApplicationForm = () => {
           <FaRegPaperPlane className="mr-2" /> Submit Application
         </button>
       </form>
+    </div>
     </div>
   );
 };

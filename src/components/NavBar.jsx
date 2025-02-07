@@ -9,9 +9,8 @@ export default function NavBar() {
   };
 
   return (
-    <div className="max-w-screen-xl mx-auto md:px-0 px-1">
-      <nav className="md:mt-5">
-        <div className="flex justify-between font-semibold items-center relative">
+      <nav className="bg-white dark:bg-bej rounded-lg shadow-lg m-4">
+        <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8 md:mt-5 flex justify-between font-semibold items-center relative">
           <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
             {/* Logo */}
             <span className="self-center text-2xl font-semibold whitespace-nowrap text-navLink">
@@ -80,6 +79,5 @@ export default function NavBar() {
           </div>
         </div>
       </nav>
-    </div>
   );
 }

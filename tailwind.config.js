@@ -16,6 +16,7 @@ module.exports = {
         },
         colors: {
           bej: "#F5F1E3",
+          input: "#D8C3A5",
           darkBrown: "#4B3F3B",
           background: "#FFF8E1",
           navLink:"#CBAA77",
@@ -31,8 +32,6 @@ module.exports = {
           cardBtnScs: "#A8D08D",
           cardBtnWr: "#E57373",
           beige: '#F4E1C1',
-          "dark-brown": '#4B3F2F',
-          "light-brown": '#B8A48A',
           primary: '#6C4F3D',
           },
       },

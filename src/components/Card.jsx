@@ -34,7 +34,7 @@ const Card = ({ job, onCardClick }) => {
 
       >
       <Tilt className="tilt-card" tiltMaxAngleX={10} tiltMaxAngleY={10} perspective={1000} scale={1.05} transitionSpeed={300}>
-        <div className="bg-cardBg dark:bg-deep-mocha rounded-lg shadow-xl overflow-hidden transition-all hover:shadow-2xl hover:scale-105 transform duration-300">
+        <div className="bg-white dark:bg-bej rounded-lg shadow-xl overflow-hidden transition-all hover:shadow-2xl hover:scale-105 transform duration-300">
           {/* Başlık ve Şirket Bilgisi */}
           <div className="p-6 border-b border-cardBorder dark:border-soft-caramel flex items-center">
             <FaBuilding className="text-cardHd mr-2" />
